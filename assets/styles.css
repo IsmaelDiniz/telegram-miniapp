@@ -1,0 +1,39 @@
+.data_body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.row{
+    margin-bottom: 8px;
+}
+
+.header{
+    display: flex;
+    align-items: left;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+.header_txt{
+    margin-left: 16px;
+    justify-content: center;
+}
+.header_logo{
+    margin: 8px;
+}
+.action_buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.action_buttons button{
+    margin: 8px;
+}
+.form-label{
+    font-weight: bold;
+}
