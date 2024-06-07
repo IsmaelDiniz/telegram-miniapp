@@ -93,6 +93,10 @@
                             </svg>
                             Cancelar
                         </button>
+
+                        <button type="button" v-on:click="teste()" class="btn btn-danger">
+                            test
+                        </button>
                     </div>
                 </div>
             </div>
@@ -128,7 +132,17 @@
                 },
                 cancel(){
                     window.Telegram.WebApp.close();
+                },
+                teste(){
+                    console.log("USER", window.Telegram.WebApp.getUser());
+                    console.log("CHAT", window.Telegram.WebApp.getChat());
                 }
+            },
+            // imprime os dados do usuario do telegram ao iniciar o vuejs
+            mounted() {
+                console.log("USER", window.Telegram.WebApp.getUser());
+                console.log("CHAT", window.Telegram.WebApp.getChat());
+
             }
         }).mount('#app')
 </script>
