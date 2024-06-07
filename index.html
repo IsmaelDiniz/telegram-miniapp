@@ -134,15 +134,17 @@
                     window.Telegram.WebApp.close();
                 },
                 teste(){
-                    console.log("USER", window.Telegram.WebApp.getUser());
-                    console.log("CHAT", window.Telegram.WebApp.getChat());
+                    // envia uma mensagem para o telegram
+                    window.Telegram.WebApp.sendData("Teste");
                 }
             },
             // imprime os dados do usuario do telegram ao iniciar o vuejs
             mounted() {
-                console.log("USER", window.Telegram.WebApp.getUser());
-                console.log("CHAT", window.Telegram.WebApp.getChat());
-
+                console.log("USER", window.Telegram.WebApp);
+                // configura o telegram para receber dados
+                window.Telegram.WebApp.onData = (data) => {
+                    console.log("TESTE ONDATA DATA", data);
+                }
             }
         }).mount('#app')
 </script>
