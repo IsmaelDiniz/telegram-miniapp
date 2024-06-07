@@ -89,7 +89,7 @@
                         </button>
                         <button type="button" v-on:click="cancel()" class="btn btn-danger">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L7.293 8z"/>
                             </svg>
                             Cancelar
                         </button>
@@ -112,7 +112,7 @@
         start_date: '',
         end_date: '',
         value: 0,
-        minimun: 0
+        minimo: 0
     })
 
     createApp({
@@ -123,13 +123,11 @@
             },
             methods: {
                 saveCupom() {
-                    console.log("Telegram.WebApp.sendData",Telegram.WebApp)
-                    Telegram.WebApp.sendData(this.cupom_obj);
-                    console.log("Teste")
+                    const dataString = JSON.stringify(this.cupom_obj);
+                    window.Telegram.WebApp.sendData(dataString);
                 },
                 cancel(){
-                    console.log("Click cancel")
-                    Telegram.WebApp.close();
+                    window.Telegram.WebApp.close();
                 }
             }
         }).mount('#app')
