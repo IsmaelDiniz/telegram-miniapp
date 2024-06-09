@@ -104,11 +104,34 @@
     </div>
 </body>
 <script>
+    const telegramApp = {
+        initData      : Telegram.WebApp.initData || '',
+        initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
+        MainButton    : Telegram.WebApp.MainButton,
+
+        init(options) {
+            document.body.style.visibility = '';
+            Telegram.WebApp.ready();
+            Telegram.WebApp.MainButton.setParams({
+                text      : 'CLOSE WEBVIEW',
+                is_visible: true
+            }).onClick(telegramApp.close);
+        },
+        expand() {
+            Telegram.WebApp.expand();
+        },
+        close() {
+            Telegram.WebApp.close();
+        },
+        sendData(data) {
+            Telegram.WebApp.sendData(data);
+        }
+    }
+
+    telegramApp.sendData("Teste <<<<>>>>");
     console.log(window.Telegram.WebApp)
     console.log(window.Telegram.WebApp.initData)
     console.log(window.Telegram.WebApp.initDataUnsafe)
-    console.log("INIT DATA", Telegram.initData())
-    console.log("INIT DATA", Telegram.initDataUnsafe())
 
 
     const { createApp, ref } = Vue
