@@ -119,12 +119,18 @@
             
             Telegram.WebApp.headerColor="#000000";
             // Altera o texto do header do web view
-            Telegram.WebApp.setHeaderText("Admin Menu - Add Cupons");
+            Telegram.WebApp.headerText = "Admin Menu - Add Cupons";
             // cria um botão de ação no footer do web view
-            Telegram.WebApp.addActionButton({
-                text: "Save Cupom",
-                onClick: telegramApp.expand
-            });
+            Telegram.WebApp.setMenu([
+                {
+                    text: 'Expand',
+                    onClick: telegramApp.expand
+                },
+                {
+                    text: 'Close',
+                    onClick: telegramApp.close
+                }
+            ]);
         },
         expand() {
             Telegram.WebApp.expand();
