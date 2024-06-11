@@ -118,7 +118,7 @@ enviarDadosParaBot('queryId_obtido_do_Telegram', 'Dados do formulário aqui');
             Telegram.WebApp.MainButton.setParams({
                 text      : 'Save Cupom',
                 is_visible: true
-            }).onClick(Telegram.WebApp.sendData("Teste"));
+            }).onClick(window.alert.bind(window, 'Main button clicked!'));
             
             Telegram.WebApp.headerColor="#111111";
             // Altera o texto do header do web view
