@@ -100,7 +100,13 @@
         </div>
     </div>
 </body>
+
 <script>
+
+// Exemplo de uso
+// Suponha que esta função seja chamada após o usuário submeter um formulário no Web App
+enviarDadosParaBot('queryId_obtido_do_Telegram', 'Dados do formulário aqui');
+
     const telegramApp = {
         initData      : Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
@@ -112,7 +118,7 @@
             Telegram.WebApp.MainButton.setParams({
                 text      : 'Save Cupom',
                 is_visible: true
-            }).onClick(window.alert.bind(window, 'Main button clicked!'));
+            }).onClick(Telegram.WebApp.sendData("Teste"));
             
             Telegram.WebApp.headerColor="#111111";
             // Altera o texto do header do web view
