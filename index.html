@@ -94,6 +94,13 @@
                             </svg>
                             Hide Main Button
                         </button>
+
+                        <button v-on:click="expand" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                            </svg>
+                            Expand
+                        </button>
                     </div>
                 </div>
             </div>
@@ -118,9 +125,6 @@
             // Altera o texto do header do web view
             Telegram.WebApp.headerText = "Admin Menu - Add Cupons";
             // cria um botão de ação no footer do web view
-        },
-        expand() {
-            Telegram.WebApp.expand();
         },
         close() {
             Telegram.WebApp.close();
@@ -165,7 +169,10 @@
             hiddeMainButton() {
                 window.Telegram.WebApp.MainButton.hide();
                 console.log("MainButton: ", window.Telegram.WebApp.MainButton);
-            }
+            },
+            expand() {
+                window.Telegram.WebApp.expand();
+            },
         },
         mounted() {
             console.log("USER", window.Telegram.WebApp);
