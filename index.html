@@ -13,14 +13,14 @@
 </head>
 <body>
     <div id="app">
-        <div class="header">
+        <!-- <div class="header">
             <div class="header_logo">
                 <img src="./assets/nerdofertas_logo.jfif" alt="" width="50" height="50">
             </div>
             <div class="header_txt">
                 <h5>Admin Menu - Add Cupons</h5>
             </div>
-        </div>
+        </div> -->
         <div class="data_body">
             <div class="container">
                 <div class="row">
@@ -116,7 +116,15 @@
                 text      : 'CLOSE WEBVIEW',
                 is_visible: true
             }).onClick(telegramApp.close);
+            
             Telegram.WebApp.headerColor="#000000";
+            // Altera o texto do header do web view
+            Telegram.WebApp.setHeaderText("Admin Menu - Add Cupons");
+            // cria um botão de ação no footer do web view
+            Telegram.WebApp.addActionButton({
+                text: "Expand",
+                onClick: telegramApp.expand
+            });
         },
         expand() {
             Telegram.WebApp.expand();
