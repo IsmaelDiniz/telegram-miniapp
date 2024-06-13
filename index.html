@@ -112,10 +112,10 @@
         init(options) {
             document.body.style.visibility = '';
             Telegram.WebApp.ready();
-            Telegram.WebApp.MainButton.setParams({
-                text      : 'Save Cupom',
-                is_visible: true
-            }).onClick(window.alert.bind(window, 'Main button clicked!'));
+            // Telegram.WebApp.MainButton.setParams({
+            //     text      : 'Save Cupom',
+            //     is_visible: true
+            // }).onClick(window.alert.bind(window, 'Main button clicked!'));
             
             Telegram.WebApp.headerColor="#333333";
             Telegram.WebApp.expand();            
