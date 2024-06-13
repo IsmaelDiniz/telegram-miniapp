@@ -104,6 +104,16 @@
 </body>
 
 <script>
+
+    console.log("Telegram.WebApp.initData",Telegram.WebApp.initData)
+    console.log("Telegram.WebApp.initDataUnsafe",Telegram.WebApp.initDataUnsafe)
+    // obtem o token da sessão do usuário do telegram
+    const token = Telegram.WebApp.initDataUnsafe.user.token;
+    console.log("Token: ", token);
+
+    // envia uma mensagem para o usuário
+    Telegram.WebApp.sendMessage('Hello, World!');
+    
     const telegramApp = {
         initData      : Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
@@ -173,7 +183,7 @@
                 text      : 'Add Cupom',
                 is_visible: true
             }).onClick(
-                window.Telegram.WebApp.sendData(cupom_obj)
+                Telegram.WebApp.sendData(cupom_obj)
             );
             
             console.log("USER", window.Telegram.WebApp);
