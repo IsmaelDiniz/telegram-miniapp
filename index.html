@@ -13,14 +13,16 @@
 </head>
 <body>
     <div id="app">
-        <!-- <div class="header">
+        <!-- 
+        <div class="header">
             <div class="header_logo">
                 <img src="./assets/nerdofertas_logo.jfif" alt="" width="50" height="50">
             </div>
             <div class="header_txt">
                 <h5>Admin Menu - Add Cupons</h5>
             </div>
-        </div> -->
+        </div> 
+        -->
         <div class="data_body">
             <div class="container">
                 <div class="row">
@@ -167,6 +169,13 @@
             },
         },
         mounted() {
+            window.Telegram.WebApp.MainButton.setParams({
+                text      : 'Add Cupom',
+                is_visible: true
+            }).onClick(
+                window.Telegram.WebApp.sendData(cupom_obj)
+            );
+            
             console.log("USER", window.Telegram.WebApp);
         }
     }).mount('#app')
