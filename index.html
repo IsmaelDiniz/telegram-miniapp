@@ -133,6 +133,14 @@
             const queryId = Telegram.WebApp.initDataUnsafe.query_id;
             const data = { message: "Olá, Bot!" };
 
+            uuid = () => {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = Math.random() * 16 | 0,
+                        v = c == 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+            }
+
             fetch(`https://api.telegram.org/bot7133044678:AAE20OfOY6CYEOdk8SB7pQ7ASVm6FRiJD40/answerWebAppQuery`, {
                 method: 'POST',
                 headers: {
@@ -142,7 +150,7 @@
                     web_app_query_id: queryId,
                     result: {
                         type: 'article',
-                        id: 'unique-id',
+                        id: uuid,
                         title: 'Title',
                         input_message_content: {
                             message_text: JSON.stringify(data)
