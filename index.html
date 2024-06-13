@@ -108,7 +108,7 @@
         const queryId = Telegram.WebApp.initDataUnsafe.query_id;
         const data = { message: "Olá, Bot!" };
 
-        fetch(`https://api.telegram.org/bot<SEU_BOT_TOKEN>/answerWebAppQuery`, {
+        fetch(`https://api.telegram.org/bot7133044678:AAE20OfOY6CYEOdk8SB7pQ7ASVm6FRiJD40/answerWebAppQuery`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -140,12 +140,6 @@
     // obtem o token da sessão do usuário do telegram
     const token = Telegram.WebApp.initDataUnsafe.user.token;
     console.log("Token: ", token);
-
-    // envia uma mensagem para o usuário
-    Telegram.WebApp.sendMessage('Hello, World!');
-
-    // envia uma mensagem para o usuário utilizando o query_id token
-
     
     const telegramApp = {
         initData      : Telegram.WebApp.initData || '',
