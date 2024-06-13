@@ -129,7 +129,7 @@
         sendData(data) {
             Telegram.WebApp.sendData(data);
         },
-        sendDataToBot() {
+        async sendDataToBot() {
             const queryId = Telegram.WebApp.initDataUnsafe.query_id;
             const data = { message: "Olá, Bot!" };
 
@@ -141,7 +141,7 @@
                 });
             }
 
-            fetch(`https://api.telegram.org/bot7133044678:AAE20OfOY6CYEOdk8SB7pQ7ASVm6FRiJD40/answerWebAppQuery`, {
+            await fetch(`https://api.telegram.org/bot7133044678:AAE20OfOY6CYEOdk8SB7pQ7ASVm6FRiJD40/answerWebAppQuery`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -161,7 +161,8 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Sucesso:', data);
-                alert('Dados enviados ao bot!');
+                console.log(data);
+                
             })
             .catch((error) => {
                 console.error('Erro:', error);
